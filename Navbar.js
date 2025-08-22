@@ -4,42 +4,83 @@ class Navbar extends HTMLElement {
         const shadow = this.attachShadow({ mode: 'open' });
 
         const nav = document.createElement('nav');
-        const divLogo = document.createElement('div');
-        const divLinks = document.createElement('div');
+        const divLinkD = document.createElement('div');
+        const divLinkC = document.createElement('div');
+        const divLinkB = document.createElement('div');
+        const divLinkA = document.createElement('div');
         const style = document.createElement('style');
 
-        divLogo.innerHTML = 'Logo da LAWD'
-        divLinks.innerHTML = `
+        divLinkA.innerHTML = `
             <a href="/">Sobre a liga</a>
-            <a href="/projetos">Projetos</a>
-            <a href="/membros">Membros</a>
-            <a href="/contato">Contato</a>
+            `
+        divLinkB.innerHTML = `
+        <a href="/projetos">Projetos</a>
+        `
+        divLinkC.innerHTML = `
+        <a href="/membros">Membros</a>
+        `
+        divLinkD.innerHTML = `
+        <a href="/contato">Contato</a>
         `
 
         nav.classList.add("navbar")
-        divLogo.classList.add("logo")
-        divLinks.classList.add("links")
+        divLinkA.classList.add("links")
+        divLinkB.classList.add("links")
+        divLinkC.classList.add("links")
+        divLinkD.classList.add("links")
 
         style.textContent = `
-            .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 4px;
-                background-color: purple;
-                color: white;
+            @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap');
+
+            @media (max-width: 600px) {
+                .navbar {
+                    padding: 12px;
+                    min-height: 56px;
+                }
+
+                .links a {
+                    font-size: 16px;
+                }
             }
 
-            .links {
+            .navbar {
                 display: flex;
-                gap: 12px;
+                position: fixed;
+                justify-content: space-around;
+                align-items: center;
+                padding: 8px 16px;
+                min-height: 48px;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1000;
+                background: linear-gradient(90deg, #7b2ff7, #b13ff5);
+                color: white;
+                font-family: 'MuseoModerno', sans-serif;
+            }
+
+            .links a{
+                display: inline-block;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 14px;
+                transition: transform 0.2s ease;
+            }
+
+            .links a:hover{
+                text-decoration: underline;
+                font-size: 18px;
+                transform: scale(1.2);
             }
         `
         
         shadow.appendChild(style);
         shadow.appendChild(nav);
-        nav.appendChild(divLogo);
-        nav.appendChild(divLinks);
+        nav.appendChild(divLinkA);
+        nav.appendChild(divLinkB);
+        nav.appendChild(divLinkC);
+        nav.appendChild(divLinkD);
     }
 }
 
