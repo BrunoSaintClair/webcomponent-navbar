@@ -12,15 +12,15 @@ class Navbar extends HTMLElement {
 
         divLinkA.innerHTML = `
             <a href="/">Sobre a liga</a>
-            `
+        `
         divLinkB.innerHTML = `
-        <a href="/projetos">Projetos</a>
+            <a href="/projetos">Projetos</a>
         `
         divLinkC.innerHTML = `
-        <a href="/membros">Membros</a>
+            <a href="/membros">Membros</a>
         `
         divLinkD.innerHTML = `
-        <a href="/contato">Contato</a>
+            <a href="/contato">Contato</a>
         `
 
         nav.classList.add("navbar")
@@ -39,7 +39,7 @@ class Navbar extends HTMLElement {
                 }
 
                 .links a {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
             }
 
@@ -59,19 +59,17 @@ class Navbar extends HTMLElement {
                 font-family: 'MuseoModerno', sans-serif;
             }
 
-            .links a{
+            .links a {
                 display: inline-block;
                 color: white;
                 text-decoration: none;
                 font-weight: bold;
-                font-size: 14px;
-                transition: transform 0.2s ease;
+                font-size: 18px;
+                transition: transform 0.1s ease-in-out;
             }
 
-            .links a:hover{
-                text-decoration: underline;
-                font-size: 18px;
-                transform: scale(1.2);
+            .links a:hover {
+                transform: scale(1.1);
             }
         `
         
